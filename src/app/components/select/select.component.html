@@ -1,0 +1,19 @@
+<div class="container" [ngStyle]="{'border': isOpen ? '1px solid rgb(32, 147, 255)' : '1px solid black'}">
+    <div class="current-value" (click)="toggleDropdown()">
+        <div class="value">{{currentValueConverted}} <i *ngIf="icon && !selectable" class="{{icon}} value-icon" [ngStyle]="{'color': iconColor}"></i></div>
+        <i class="fas fa-chevron-down chevron-icon"></i>
+    </div>
+
+    <div *ngIf="isOpen" class="dropdown">
+        <div *ngIf="selectable" (click)="selectAll()" class="dropdown-value">
+            <input *ngIf="selectable" type="checkbox" [ngStyle]="{'cursor': 'pointer'}" [checked]="allSelected">
+            Select All
+        </div>
+
+        <div *ngFor="let value of values" class="dropdown-value" [ngStyle]="{'padding-left': selectable ? '0px' : '5px'}" (click)="selectValue(value)">
+            <input *ngIf="selectable" type="checkbox" [ngStyle]="{'cursor': 'pointer'}" [checked]="currentValues.includes(value)">
+            {{value}}
+            <i *ngIf="icon" class="{{icon}} value-icon" [ngStyle]="{'color': iconColor}"></i>
+        </div>
+    </div>
+</div>

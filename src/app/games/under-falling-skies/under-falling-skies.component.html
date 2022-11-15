@@ -1,0 +1,44 @@
+<div class="page">
+    <div class="game-card">
+        <img class="logo" src="https://devir.com.br/wp-content/uploads/2021/09/logo_falling_skies.png">
+    </div>
+
+
+    <div class="content">
+        <div class="tabs">
+            <div class="tab selected-tab">Existing scenarios</div>
+            <div class="tab">Add scenario</div>
+        </div>
+
+
+        <div class="new-scenario">
+            <div class="filters">
+                <div class="block">
+                    <span class="block-label">Minimum Difficulty</span>
+                    <app-select [values]="[1, 2, 3, 4, 5, 6, 7, 8, 9]" [currentValues]="[1]" [icon]="'fas fa-star'" [iconColor]="'goldenrod'"></app-select>
+                </div>
+
+                <div class="block">
+                    <span class="block-label">Maximum Difficulty</span>
+                    <app-select [values]="[1, 2, 3, 4, 5, 6, 7, 8, 9]" [currentValues]="[9]" [icon]="'fas fa-star'" [iconColor]="'goldenrod'" [selectable]="true"></app-select>
+                </div>
+
+                <div class="block">
+                    <span class="block-label">Heroes</span>
+                    <select></select>
+                </div>
+
+                <div class="block">
+                    <span class="block-label">Missions</span>
+                    <select></select>
+                </div>
+
+                <div class="block">
+                    <span class="block-label">Cities</span>
+                    <select></select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
